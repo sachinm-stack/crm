@@ -1,0 +1,120 @@
+[
+  {
+    "label": "Home",
+    "path": "/",
+    "badge": null
+  },
+  {
+    "label": "Business Leads",
+    "path": "/business-leads",
+    "badge": null
+  },
+  {
+    "label": "Dashboard",
+    "path": "/dashboard",
+    "badge": 12,
+    "children": [
+      "Lead Creation",
+      "Lead To Sales",
+      "Lead Status Age",
+      "Lost Opportunity",
+      "Follow-up Missed",
+      "Sales Performance",
+      "Sales Cycle Length",
+      "Leads / Sales Trend",
+      "Communication Dashboard",
+      "Customer Analysis",
+      "Website Analytics",
+      "Verification Analytics"
+    ]
+  },
+  {
+    "label": "Quality",
+    "path": "/lead-verification",
+    "badge": 2,
+    "children": [
+      "Agent Desktop",
+      "Lead Duplication"
+    ]
+  },
+  {
+    "label": "Prospects Dashboard",
+    "path": "/prospects-dashboard",
+    "badge": null
+  },
+  {
+    "label": "Reports",
+    "path": "/reports",
+    "badge": null
+  },
+  {
+    "label": "Service Agent",
+    "path": "/service-agent",
+    "badge": null
+  },
+  {
+    "label": "Inactive Calls",
+    "path": "/inactive-calls",
+    "badge": null
+  },
+  {
+    "label": "Admin",
+    "path": "/admin",
+    "badge": 1
+  },
+  {
+    "label": "Logout",
+    "path": "/logout",
+    "badge": null
+  },
+  {
+    "label": "Sales Dashboard",
+    "path": "/sales-dashboard",
+    "badge": 5
+  },
+  {
+    "label": "Marketing",
+    "path": "/marketing",
+    "badge": 3
+  },
+  {
+    "label": "Campaigns",
+    "path": "/campaigns",
+    "badge": 7
+  },
+  {
+    "label": "Analytics",
+    "path": "/analytics",
+    "badge": 9
+  },
+  {
+    "label": "Customer Support",
+    "path": "/customer-support",
+    "badge": 4
+  },
+  {
+    "label": "Finance",
+    "path": "/finance",
+    "badge": 2
+  },
+  {
+    "label": "HR Management",
+    "path": "/hr-management",
+    "badge": 6
+  },
+  {
+    "label": "Employee Tracking",
+    "path": "/employee-tracking",
+    "badge": 8
+  },
+  {
+    "label": "Notifications",
+    "path": "/notifications",
+    "badge": 15
+  },
+  {
+    "label": "Settings",
+    "path": "/settings",
+    "badge": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "status": "New",
+    "count": 2824
+  },
+  {
+    "status": "Hot",
+    "count": 4200
+  },
+  {
+    "status": "Warm",
+    "count": 3800
+  },
+  {
+    "status": "Cold",
+    "count": 2100
+  },
+  {
+    "status": "Lost",
+    "count": 1200
+  },
+  {
+    "status": "Closed",
+    "count": 5100
+  },
+  {
+    "status": "Qualified",
+    "count": 3300
+  },
+  {
+    "status": "Follow Up",
+    "count": 2700
+  },
+  {
+    "status": "Converted",
+    "count": 4600
+  },
+  {
+    "status": "Pending",
+    "count": 1800
+  },
+  {
+    "status": "Rejected",
+    "count": 950
+  },
+  {
+    "status": "Meeting",
+    "count": 2400
+  },
+  {
+    "status": "Callback",
+    "count": 3100
+  },
+  {
+    "status": "Interested",
+    "count": 3900
+  },
+  {
+    "status": "Not Interested",
+    "count": 800
+  },
+  {
+    "status": "In Progress",
+    "count": 3500
+  }
+]

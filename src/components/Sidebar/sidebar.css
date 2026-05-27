@@ -1,0 +1,185 @@
+.sidebar {
+  width: 270px;
+  background: #111827;
+  color: #d1d5db;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  transition: 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 35px;
+  height: 35px;
+  background: #22c55e;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.logo h2 {
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+
+.logo span {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.collapse-btn {
+  background: #1f2937;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.profile {
+  margin: 10px 16px;
+  padding: 12px;
+  background: #1f2937;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: #f59e0b;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profile h4 {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile p {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.nav-menu {
+  padding: 10px;
+}
+
+.nav-item {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 11px 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nav-item.active {
+  background: white;
+  color: #16a34a;
+  border-left: 4px solid #22c55e;
+}
+
+.nav-item.static:hover,
+.nav-item:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.nav-item span {
+  flex: 1;
+}
+
+.badge {
+  background: #f59e0b;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge.green {
+  background: #22c55e;
+}
+
+.badge.purple {
+  background: #8b5cf6;
+}
+
+.chev {
+  font-size: 14px;
+}
+
+.sub-menu {
+  margin-left: 42px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.sub-menu p {
+  position: relative;
+  padding: 7px 0 7px 18px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sub-menu p::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #4b5563;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 13px;
+  transition: all 0.25s ease;
+}
+
+.sub-menu p:hover {
+  color: white;
+  transform: translateX(3px);
+}
+
+.sub-menu p:hover::before {
+  background: #22c55e;
+}
+
+.logout {
+  margin: 15px 10px;
+}

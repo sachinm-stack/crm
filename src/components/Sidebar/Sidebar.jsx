@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import './Sidebar.css';
 import {
   FiHome,
   FiBarChart2,
@@ -12,6 +14,7 @@ import {
   FiLogOut,
   FiChevronLeft,
   FiChevronDown,
+  FiChevronRight,
 } from "react-icons/fi";
 
 const iconMap = {
@@ -42,7 +45,12 @@ const dashboardChildren = [
   "Verification Analytics",
 ];
 
+const qualityChildren = ["Agent Desktop", "Lead Duplication"];
+
 const Sidebar = ({ collapsed, setCollapsed }) => {
+  const [showDashboardMenu, setShowDashboardMenu] = useState(false);
+  const [showQualityMenu, setShowQualityMenu] = useState(false);
+
   return (
     <aside className={collapsed ? "sidebar collapsed" : "sidebar"}>
       <div className="logo-row">
@@ -56,7 +64,10 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
           </div>
         )}
 
-        <button className="collapse-btn" onClick={() => setCollapsed(!collapsed)}>
+        <button
+          className="collapse-btn"
+          onClick={() => setCollapsed(!collapsed)}
+        >
           <FiChevronLeft />
         </button>
       </div>
@@ -83,18 +94,27 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
         </NavLink>
 
         <div className="nav-group">
-          <div className="nav-item static">
+          <div
+            className="nav-item static"
+            onClick={() => setShowDashboardMenu(!showDashboardMenu)}
+          >
             {iconMap.Dashboard}
+
             {!collapsed && (
               <>
                 <span>Dashboard</span>
                 <b className="badge">12</b>
-                <FiChevronDown className="chev" />
+
+                {showDashboardMenu ? (
+                  <FiChevronDown className="chev" />
+                ) : (
+                  <FiChevronRight className="chev" />
+                )}
               </>
             )}
           </div>
 
-          {!collapsed && (
+          {!collapsed && showDashboardMenu && (
             <div className="sub-menu">
               {dashboardChildren.map((item) => (
                 <p key={item}>{item}</p>
@@ -104,21 +124,31 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
         </div>
 
         <div className="nav-group">
-          <NavLink to="/lead-verification" className="nav-item">
+          <div
+            className="nav-item static"
+            onClick={() => setShowQualityMenu(!showQualityMenu)}
+          >
             {iconMap.Quality}
+
             {!collapsed && (
               <>
                 <span>Quality</span>
                 <b className="badge green">2</b>
-                <FiChevronDown className="chev" />
+
+                {showQualityMenu ? (
+                  <FiChevronDown className="chev" />
+                ) : (
+                  <FiChevronRight className="chev" />
+                )}
               </>
             )}
-          </NavLink>
+          </div>
 
-          {!collapsed && (
+          {!collapsed && showQualityMenu && (
             <div className="sub-menu">
-              <p>Agent Desktop</p>
-              <p>Lead Duplication</p>
+              {qualityChildren.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
             </div>
           )}
         </div>
@@ -134,6 +164,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
 
         <div className="nav-item static">
           {iconMap.Admin}
+
           {!collapsed && (
             <>
               <span>Admin</span>

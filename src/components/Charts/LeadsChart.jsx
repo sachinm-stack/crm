@@ -1,3 +1,4 @@
+import './LeadsChart.css';
 import {
   BarChart,
   Bar,

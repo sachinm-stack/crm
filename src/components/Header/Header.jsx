@@ -1,5 +1,5 @@
 import { FiSettings, FiSearch } from "react-icons/fi";
-
+import "./Header.css";
 const Header = () => {
   return (
     <div className="top-header">

@@ -1,0 +1,79 @@
+.chart-card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card-title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.chart-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.chart-btn {
+  background: #f3f4f6;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chart-btn:hover {
+  background: #e5e7eb;
+}
+
+.chart-btn.active {
+  background: #22c55e;
+  color: white;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 350px;
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 8px;
+}
+
+.recharts-default-tooltip {
+  border-radius: 8px !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+}
+
+.recharts-legend-item-text {
+  font-size: 13px !important;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    height: 280px;
+  }
+
+  .card-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

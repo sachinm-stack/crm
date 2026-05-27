@@ -1,3 +1,4 @@
+import './StatCard.css';
 const StatCard = ({ value, label, type }) => {
   return (
     <div className={`stat-card ${type}`}>

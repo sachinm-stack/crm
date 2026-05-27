@@ -2,6 +2,7 @@ import { useState } from "react";
 import StatCard from "../../components/StatCard/StatCard";
 import DataTable from "../../components/Table/DataTable";
 import leadsData from "../../data/leads.json";
+import "./LeadVerification.css";
 
 const LeadVerification = () => {
 

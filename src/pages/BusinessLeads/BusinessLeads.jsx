@@ -2,12 +2,17 @@ import { useState } from "react";
 import { FiSettings, FiDownload } from "react-icons/fi";
 import DataTable from "../../components/Table/DataTable";
 import leads from "../../data/leads.json";
+import "./BusinessLeads.css";
 
 const BusinessLeads = () => {
-
   const [activeTab, setActiveTab] = useState("Unallocated");
   const [selectedRows, setSelectedRows] = useState([]);
 
+  // DATE FILTER
+  const [startDate, setStartDate] = useState("2021-05-26");
+  const [endDate, setEndDate] = useState("2026-06-30");
+
+  // TABLE COLUMNS
   const columns = [
     { label: "Name", accessor: "name" },
     { label: "Phone", accessor: "phone" },
@@ -21,19 +26,28 @@ const BusinessLeads = () => {
     { label: "Follow Up Date", accessor: "followUpDate" },
   ];
 
-  const filteredData =
+  // TAB FILTER
+  const tabFilteredData =
     activeTab === "Unallocated"
       ? leads.filter((lead) => lead.allocatedTo === "")
       : leads.filter((lead) => lead.allocatedTo !== "");
 
-  // CSV EXPORT
+  // DATE FILTER
+  const filteredData = tabFilteredData.filter((lead) => {
+    return (
+      lead.createdAt >= startDate &&
+      lead.createdAt <= endDate
+    );
+  });
 
+  // EXPORT CSV
   const exportCSV = () => {
-
     const headers = columns.map((col) => col.label).join(",");
 
     const rows = filteredData.map((item) =>
-      columns.map((col) => item[col.accessor]).join(",")
+      columns
+        .map((col) => `"${item[col.accessor] || ""}"`)
+        .join(",")
     );
 
     const csvContent = [headers, ...rows].join("\n");
@@ -49,26 +63,54 @@ const BusinessLeads = () => {
     link.href = url;
     link.download = "business-leads.csv";
 
+    document.body.appendChild(link);
+
     link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
   };
 
   return (
     <div className="page">
 
-      {/* HEADER */}
+      {/* PAGE HEADER */}
 
       <div className="page-header">
+
         <h1>Leads Page</h1>
 
         <div className="page-actions">
+
+          {/* FILTER BUTTON */}
+
           <button className="green-btn">
             Filter
           </button>
 
-          <div className="date-picker">
-            2021-05-26 to 2026-05-26
+          {/* DATE RANGE */}
+
+          <div className="date-range-container">
+
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+
+            <span>to</span>
+
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+
           </div>
+
         </div>
+
       </div>
 
       {/* TABS */}
@@ -83,7 +125,10 @@ const BusinessLeads = () => {
                 ? "tab active-tab"
                 : "tab"
             }
-            onClick={() => setActiveTab("Unallocated")}
+            onClick={() => {
+              setActiveTab("Unallocated");
+              setSelectedRows([]);
+            }}
           >
             Unallocated
           </button>
@@ -94,7 +139,10 @@ const BusinessLeads = () => {
                 ? "tab active-tab"
                 : "tab"
             }
-            onClick={() => setActiveTab("Allocated")}
+            onClick={() => {
+              setActiveTab("Allocated");
+              setSelectedRows([]);
+            }}
           >
             Allocated
           </button>
@@ -117,7 +165,7 @@ const BusinessLeads = () => {
           onSelectionChange={setSelectedRows}
         />
 
-        {/* ACTIONS */}
+        {/* ACTION BUTTONS */}
 
         <div className="table-actions">
 
@@ -132,7 +180,10 @@ const BusinessLeads = () => {
             ALLOCATE ▼
           </button>
 
-          <button className="blue-btn" onClick={exportCSV}>
+          <button
+            className="blue-btn"
+            onClick={exportCSV}
+          >
             <FiDownload />
             Export
           </button>

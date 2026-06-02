@@ -1,3 +1,8 @@
+# Project Link:https://sampledashboardcrm.netlify.app/
+
+# About Project:
+A responsive CRM Dashboard built with React.js featuring lead management, business analytics, dynamic tables, filtering, and an intuitive user interface.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
